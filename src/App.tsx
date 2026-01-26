@@ -1,11 +1,7 @@
-
+import { AppRouter } from '@/routes/AppRouter'
 
 function App() {
-  return (
-    <div className='min-h-screen bg-background p-8' data-theme="blue" data-mode="light">
-
-    </div>
-  )
+  return <AppRouter />
 }
 
 export default App
