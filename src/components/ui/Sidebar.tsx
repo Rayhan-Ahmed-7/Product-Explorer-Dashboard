@@ -1,6 +1,6 @@
 import * as React from "react"
 import { type VariantProps, cva } from "class-variance-authority"
-import { PanelLeft } from "lucide-react"
+import { MenuIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useSidebarStore } from "@/store/useSidebarStore"
 import { Button } from "@/components/ui/Button"
@@ -46,6 +46,7 @@ export function SidebarProvider({
             style={
                 {
                     "--sidebar-width": SIDEBAR_WIDTH,
+                    "--sidebar-width-mobile": SIDEBAR_WIDTH_MOBILE,
                     "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
                 } as React.CSSProperties
             }
@@ -101,7 +102,7 @@ export function Sidebar({
                 {/* Drawer */}
                 <div
                     className={cn(
-                        "fixed inset-y-0 z-50 h-full w-(--sidebar-width) transition-transform duration-300 ease-in-out bg-card border-r border-border text-card-foreground",
+                        "fixed inset-y-0 z-50 h-full w-(--sidebar-width-mobile) transition-transform duration-300 ease-in-out bg-card border-r border-border text-card-foreground",
                         side === "left"
                             ? "left-0 data-[state=closed]:-translate-x-full"
                             : "right-0 data-[state=closed]:translate-x-full",
@@ -194,7 +195,7 @@ export function SidebarTrigger({ className }: { className?: string }) {
             className={cn("h-8 w-8", className)}
             onClick={toggleSidebar}
         >
-            <PanelLeft className="h-4 w-4" />
+            <MenuIcon className="h-4 w-4" />
             <span className="sr-only">Toggle Sidebar</span>
         </Button>
     )
