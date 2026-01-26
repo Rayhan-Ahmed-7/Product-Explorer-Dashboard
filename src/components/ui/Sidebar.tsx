@@ -120,6 +120,8 @@ export function Sidebar({
             className="group peer hidden md:block text-card-foreground flex-none"
             data-state={state}
             data-collapsible={state === "collapsed" ? collapsible : ""}
+            data-variant={variant}
+            data-side={side}
         >
             {/* Sidebar Gap for Layout */}
             <div
