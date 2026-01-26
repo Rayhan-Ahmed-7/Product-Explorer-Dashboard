@@ -1,12 +1,10 @@
 
-function App() {
 
+function App() {
   return (
-    <>
-      <div className='flex flex-col items-center justify-center h-screen'>
-        <h1>Product Explorer Dashboard</h1>
-      </div>
-    </>
+    <div className='min-h-screen bg-background p-8' data-theme="blue" data-mode="light">
+
+    </div>
   )
 }
 
