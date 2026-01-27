@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router'
 import { useProducts } from '../hooks/useProducts'
 import { useCategoryList } from '../hooks/useCategoryList'
 import { useProductsUIStore } from '../stores/useProductsUIStore'
@@ -155,7 +156,12 @@ export default function ProductListPage() {
                                                     className="h-10 w-10 rounded object-cover"
                                                 />
                                                 <div>
-                                                    <div className="font-medium">{product.title}</div>
+                                                    <Link
+                                                        to={`/products/${product.id}`}
+                                                        className="font-medium hover:text-primary transition-colors hover:underline"
+                                                    >
+                                                        {product.title}
+                                                    </Link>
                                                     <div className="text-sm text-muted-foreground line-clamp-1">
                                                         {product.description}
                                                     </div>
