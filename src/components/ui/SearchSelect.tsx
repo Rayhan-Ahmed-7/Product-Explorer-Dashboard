@@ -136,7 +136,7 @@ export function SearchSelect({
                 onKeyDown={handleKeyDown}
                 disabled={disabled}
                 className={cn(
-                    "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background",
+                    "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground ring-offset-background",
                     "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
                     "disabled:cursor-not-allowed disabled:opacity-50",
                     "hover:bg-muted/50 transition-colors",
@@ -166,7 +166,7 @@ export function SearchSelect({
             {isOpen && (
                 <div
                     className={cn(
-                        "absolute z-50 mt-1 w-full rounded-md border border-border bg-popover shadow-lg",
+                        "absolute z-50 mt-1 w-full rounded-md border border-border bg-popover text-popover-foreground shadow-lg",
                         "animate-in fade-in-0 zoom-in-95"
                     )}
                 >
@@ -182,7 +182,7 @@ export function SearchSelect({
                                 onKeyDown={handleKeyDown}
                                 placeholder={searchPlaceholder}
                                 className={cn(
-                                    "w-full rounded-md border border-input bg-background pl-8 pr-3 py-2 text-sm",
+                                    "w-full rounded-md border border-input bg-background px-3 pl-8 py-2 text-sm text-foreground",
                                     "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0",
                                     "placeholder:text-muted-foreground"
                                 )}
@@ -212,7 +212,7 @@ export function SearchSelect({
                                     onMouseEnter={() => setHighlightedIndex(index)}
                                     disabled={option.disabled}
                                     className={cn(
-                                        "flex w-full items-center justify-between rounded-sm px-2 py-1.5 text-sm outline-none transition-colors",
+                                        "flex w-full items-center justify-between rounded-sm px-2 py-1.5 text-sm text-foreground outline-none transition-colors",
                                         "hover:bg-accent hover:text-accent-foreground",
                                         "disabled:pointer-events-none disabled:opacity-50",
                                         highlightedIndex === index && "bg-accent text-accent-foreground",
