@@ -2,7 +2,7 @@ import { useParams } from "react-router"
 import { useProduct } from '../hooks/useProduct'
 import { Button } from "@/components/ui/Button"
 import { Card } from '@/components/ui/Card'
-import { ArrowLeft, Loader2, Package, Barcode, TrendingUp, Star } from "lucide-react"
+import { ArrowLeft, Package, Barcode, TrendingUp, Star } from "lucide-react"
 import { useCurrency } from '@/context/CurrencyContext'
 import { InfoCard } from '../components/InfoCard'
 import { MediaGallery } from '../components/MediaGallery'
@@ -12,6 +12,7 @@ import { LogisticsInfo } from '../components/LogisticsInfo'
 import { PoliciesSection } from '../components/PoliciesSection'
 import { SystemMetadata } from '../components/SystemMetadata'
 import { ReviewsList } from '../components/ReviewsList'
+import { ProductDetailSkeleton } from '../components/ProductDetailSkeleton'
 
 export default function ProductDetailPage() {
     const { id } = useParams()
@@ -20,11 +21,7 @@ export default function ProductDetailPage() {
     const { currency } = useCurrency()
 
     if (isLoading) {
-        return (
-            <div className="flex items-center justify-center py-12">
-                <Loader2 className="h-8 w-8 animate-spin text-primary" />
-            </div>
-        )
+        return <ProductDetailSkeleton />
     }
 
     if (isError || !product) {
