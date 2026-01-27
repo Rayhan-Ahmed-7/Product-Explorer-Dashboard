@@ -11,7 +11,7 @@ export function Table({
         <div className="relative w-full overflow-auto">
             <table
                 className={cn(
-                    "w-full caption-bottom text-sm",
+                    "w-full caption-bottom text-sm text-foreground",
                     className
                 )}
                 {...props}

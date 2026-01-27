@@ -104,9 +104,6 @@ export function ThemePicker() {
                     </div>
                 )}
             </div>
-            <button className="p-2 text-muted-foreground hover:text-foreground transition-colors">
-                <Maximize2 className="h-5 w-5" />
-            </button>
         </div>
     )
 }

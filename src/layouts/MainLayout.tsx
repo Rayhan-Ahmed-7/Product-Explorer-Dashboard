@@ -5,7 +5,7 @@ import {
     SidebarInset
 } from "@/components/ui/Sidebar"
 import { AppSidebar } from "@/components/AppSidebar"
-import { ThemeToggle } from "@/components/ThemeToggle"
+import { ThemePicker } from "@/components/ThemePicker"
 
 export default function MainLayout() {
 
@@ -17,7 +17,7 @@ export default function MainLayout() {
                     <div className="flex items-center gap-4">
                         <SidebarTrigger />
                     </div>
-                    <ThemeToggle />
+                    <ThemePicker />
                 </header>
                 <main className="flex-1 overflow-auto">
                     <Outlet />
