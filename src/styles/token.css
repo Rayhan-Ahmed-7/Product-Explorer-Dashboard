@@ -97,42 +97,41 @@
    ===================== */
 :root {
     /* Define base variables for reference if needed, though we override colors directly */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+
     --background: oklch(1 0 0);
     --foreground: oklch(0.15 0.005 250);
 
     /* Direct overrides for Tailwind utility classes */
-    --color-background: oklch(1 0 0);
-    --color-foreground: oklch(0.15 0.005 250);
-    --color-primary: oklch(0.55 0.22 250);
-    --color-primary-foreground: oklch(0.98 0.01 250);
-    --color-secondary: oklch(0.96 0.01 250);
-    --color-secondary-foreground: oklch(0.2 0.01 250);
-    --color-muted: oklch(0.96 0.005 250);
-    --color-muted-foreground: oklch(0.45 0.01 250);
-    --color-accent: oklch(0.96 0.01 250);
-    --color-accent-foreground: oklch(0.15 0.005 250);
-    --color-destructive: oklch(0.55 0.22 15);
-    --color-destructive-foreground: oklch(0.98 0.01 15);
-    --color-card: oklch(1 0 0);
-    --color-card-foreground: oklch(0.15 0.005 250);
-    --color-popover: oklch(1 0 0);
-    --color-popover-foreground: oklch(0.15 0.005 250);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.15 0.005 250);
+    --primary: oklch(0.55 0.22 250);
+    --primary-foreground: oklch(0.98 0.01 250);
+    --secondary: oklch(0.96 0.01 250);
+    --secondary-foreground: oklch(0.2 0.01 250);
+    --muted: oklch(0.96 0.005 250);
+    --muted-foreground: oklch(0.45 0.01 250);
+    --accent: oklch(0.96 0.01 250);
+    --accent-foreground: oklch(0.15 0.005 250);
+    --destructive: oklch(0.55 0.22 15);
+    --destructive-foreground: oklch(0.98 0.01 15);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.005 250);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.15 0.005 250);
 
     /* Semantic Colors (Global) */
     --success: oklch(0.65 0.2 145);
     --success-foreground: oklch(0.98 0.01 145);
-    --color-success: oklch(0.65 0.2 145);
-    --color-success-foreground: oklch(0.98 0.01 145);
 
     --info: oklch(0.6 0.15 240);
     --info-foreground: oklch(0.98 0.01 240);
-    --color-info: oklch(0.6 0.15 240);
-    --color-info-foreground: oklch(0.98 0.01 240);
 
     --warning: oklch(0.75 0.18 80);
     --warning-foreground: oklch(0.99 0.01 87);
-    --color-warning: oklch(0.75 0.18 80);
-    --color-warning-foreground: oklch(0.99 0.01 87);
 
     /* Semantic colors are now global in :root */
 
@@ -142,23 +141,23 @@
 }
 
 [data-theme="blue"][data-mode="dark"] {
-    --color-background: oklch(0.2003 0.0259 263.72);
-    --color-foreground: oklch(1 0 0);
-    --color-primary: oklch(0.5282 0.2286 262.29);
-    --color-primary-foreground: oklch(1 0 0);
-    --color-secondary: oklch(0.35 0.03 264);
+    --background: oklch(0.2003 0.0259 263.72);
+    --foreground: oklch(1 0 0);
+    --primary: oklch(0.5282 0.2286 262.29);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.35 0.03 264);
     /* Lighter gray-blue for visibility */
-    --color-secondary-foreground: oklch(1 0 0);
-    --color-muted: oklch(0.2781 0.0296 256.85);
-    --color-muted-foreground: oklch(0.7137 0.0192 261.32);
-    --color-accent: oklch(0.2781 0.0296 256.85);
-    --color-accent-foreground: oklch(1 0 0);
-    --color-destructive: oklch(0.55 0.25 15);
-    --color-destructive-foreground: oklch(0.98 0.01 15);
-    --color-card: oklch(0.2101 0.0318 264.66);
-    --color-card-foreground: oklch(1 0 0);
-    --color-popover: oklch(0.2101 0.0318 264.66);
-    --color-popover-foreground: oklch(1 0 0);
+    --secondary-foreground: oklch(1 0 0);
+    --muted: oklch(0.2781 0.0296 256.85);
+    --muted-foreground: oklch(0.7137 0.0192 261.32);
+    --accent: oklch(0.2781 0.0296 256.85);
+    --accent-foreground: oklch(1 0 0);
+    --destructive: oklch(0.55 0.25 15);
+    --destructive-foreground: oklch(0.98 0.01 15);
+    --card: oklch(0.2101 0.0318 264.66);
+    --card-foreground: oklch(1 0 0);
+    --popover: oklch(0.2101 0.0318 264.66);
+    --popover-foreground: oklch(1 0 0);
 
     /* Semantic colors inherited from :root */
 
@@ -171,22 +170,22 @@
    ORANGE THEME
    ===================== */
 [data-theme="orange"][data-mode="light"] {
-    --color-background: oklch(1 0 0);
-    --color-foreground: oklch(0.15 0.005 50);
-    --color-primary: oklch(0.65 0.2 50);
-    --color-primary-foreground: oklch(0.98 0.01 50);
-    --color-secondary: oklch(0.95 0.01 50);
-    --color-secondary-foreground: oklch(0.2 0.01 50);
-    --color-muted: oklch(0.96 0.005 50);
-    --color-muted-foreground: oklch(0.45 0.01 50);
-    --color-accent: oklch(0.96 0.01 50);
-    --color-accent-foreground: oklch(0.15 0.005 50);
-    --color-destructive: oklch(0.55 0.22 15);
-    --color-destructive-foreground: oklch(0.98 0.01 15);
-    --color-card: oklch(1 0 0);
-    --color-card-foreground: oklch(0.15 0.005 50);
-    --color-popover: oklch(1 0 0);
-    --color-popover-foreground: oklch(0.15 0.005 50);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.15 0.005 50);
+    --primary: oklch(0.65 0.2 50);
+    --primary-foreground: oklch(0.98 0.01 50);
+    --secondary: oklch(0.95 0.01 50);
+    --secondary-foreground: oklch(0.2 0.01 50);
+    --muted: oklch(0.96 0.005 50);
+    --muted-foreground: oklch(0.45 0.01 50);
+    --accent: oklch(0.96 0.01 50);
+    --accent-foreground: oklch(0.15 0.005 50);
+    --destructive: oklch(0.55 0.22 15);
+    --destructive-foreground: oklch(0.98 0.01 15);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.005 50);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.15 0.005 50);
 
     /* Semantic colors inherited from :root */
 
@@ -196,23 +195,23 @@
 }
 
 [data-theme="orange"][data-mode="dark"] {
-    --color-background: oklch(0.2003 0.0259 50);
-    --color-foreground: oklch(1 0 0);
-    --color-primary: oklch(0.7 0.18 50);
-    --color-primary-foreground: oklch(0.98 0.01 50);
-    --color-secondary: oklch(0.35 0.03 50);
+    --background: oklch(0.2003 0.0259 50);
+    --foreground: oklch(1 0 0);
+    --primary: oklch(0.7 0.18 50);
+    --primary-foreground: oklch(0.98 0.01 50);
+    --secondary: oklch(0.35 0.03 50);
     /* Lighter for visibility */
-    --color-secondary-foreground: oklch(1 0 0);
-    --color-muted: oklch(0.2781 0.0296 50);
-    --color-muted-foreground: oklch(0.7137 0.0192 50);
-    --color-accent: oklch(0.2781 0.0296 50);
-    --color-accent-foreground: oklch(1 0 0);
-    --color-destructive: oklch(0.55 0.25 15);
-    --color-destructive-foreground: oklch(0.98 0.01 15);
-    --color-card: oklch(0.2101 0.0318 50);
-    --color-card-foreground: oklch(1 0 0);
-    --color-popover: oklch(0.2101 0.0318 50);
-    --color-popover-foreground: oklch(1 0 0);
+    --secondary-foreground: oklch(1 0 0);
+    --muted: oklch(0.2781 0.0296 50);
+    --muted-foreground: oklch(0.7137 0.0192 50);
+    --accent: oklch(0.2781 0.0296 50);
+    --accent-foreground: oklch(1 0 0);
+    --destructive: oklch(0.55 0.25 15);
+    --destructive-foreground: oklch(0.98 0.01 15);
+    --card: oklch(0.2101 0.0318 50);
+    --card-foreground: oklch(1 0 0);
+    --popover: oklch(0.2101 0.0318 50);
+    --popover-foreground: oklch(1 0 0);
 
     /* Semantic colors inherited from :root */
 
@@ -225,22 +224,22 @@
    VIOLET THEME
    ===================== */
 [data-theme="violet"][data-mode="light"] {
-    --color-background: oklch(1 0 0);
-    --color-foreground: oklch(0.15 0.005 300);
-    --color-primary: oklch(0.55 0.24 300);
-    --color-primary-foreground: oklch(0.98 0.01 300);
-    --color-secondary: oklch(0.96 0.01 300);
-    --color-secondary-foreground: oklch(0.2 0.01 300);
-    --color-muted: oklch(0.96 0.005 300);
-    --color-muted-foreground: oklch(0.45 0.01 300);
-    --color-accent: oklch(0.96 0.01 300);
-    --color-accent-foreground: oklch(0.15 0.005 300);
-    --color-destructive: oklch(0.55 0.22 15);
-    --color-destructive-foreground: oklch(0.98 0.01 15);
-    --color-card: oklch(1 0 0);
-    --color-card-foreground: oklch(0.15 0.005 300);
-    --color-popover: oklch(1 0 0);
-    --color-popover-foreground: oklch(0.15 0.005 300);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.15 0.005 300);
+    --primary: oklch(0.55 0.24 300);
+    --primary-foreground: oklch(0.98 0.01 300);
+    --secondary: oklch(0.96 0.01 300);
+    --secondary-foreground: oklch(0.2 0.01 300);
+    --muted: oklch(0.96 0.005 300);
+    --muted-foreground: oklch(0.45 0.01 300);
+    --accent: oklch(0.96 0.01 300);
+    --accent-foreground: oklch(0.15 0.005 300);
+    --destructive: oklch(0.55 0.22 15);
+    --destructive-foreground: oklch(0.98 0.01 15);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.005 300);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.15 0.005 300);
 
     /* Semantic colors inherited from :root */
 
@@ -250,23 +249,23 @@
 }
 
 [data-theme="violet"][data-mode="dark"] {
-    --color-background: oklch(0.2003 0.0259 300);
-    --color-foreground: oklch(1 0 0);
-    --color-primary: oklch(0.65 0.26 300);
-    --color-primary-foreground: oklch(0.98 0.01 300);
-    --color-secondary: oklch(0.35 0.03 300);
+    --background: oklch(0.2003 0.0259 300);
+    --foreground: oklch(1 0 0);
+    --primary: oklch(0.65 0.26 300);
+    --primary-foreground: oklch(0.98 0.01 300);
+    --secondary: oklch(0.35 0.03 300);
     /* Lighter for visibility */
-    --color-secondary-foreground: oklch(1 0 0);
-    --color-muted: oklch(0.2781 0.0296 300);
-    --color-muted-foreground: oklch(0.7137 0.0192 300);
-    --color-accent: oklch(0.2781 0.0296 300);
-    --color-accent-foreground: oklch(1 0 0);
-    --color-destructive: oklch(0.55 0.25 15);
-    --color-destructive-foreground: oklch(0.98 0.01 15);
-    --color-card: oklch(0.2101 0.0318 300);
-    --color-card-foreground: oklch(1 0 0);
-    --color-popover: oklch(0.2101 0.0318 300);
-    --color-popover-foreground: oklch(1 0 0);
+    --secondary-foreground: oklch(1 0 0);
+    --muted: oklch(0.2781 0.0296 300);
+    --muted-foreground: oklch(0.7137 0.0192 300);
+    --accent: oklch(0.2781 0.0296 300);
+    --accent-foreground: oklch(1 0 0);
+    --destructive: oklch(0.55 0.25 15);
+    --destructive-foreground: oklch(0.98 0.01 15);
+    --card: oklch(0.2101 0.0318 300);
+    --card-foreground: oklch(1 0 0);
+    --popover: oklch(0.2101 0.0318 300);
+    --popover-foreground: oklch(1 0 0);
 
     /* Semantic colors inherited from :root */
 

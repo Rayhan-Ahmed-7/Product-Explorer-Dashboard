@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils"
 import { useSidebarStore } from "@/store/useSidebarStore"
 import { Button } from "@/components/ui/Button"
 
-const SIDEBAR_WIDTH = "16rem"
-const SIDEBAR_WIDTH_MOBILE = "18rem"
+const SIDEBAR_WIDTH = "14rem"
+const SIDEBAR_WIDTH_MOBILE = "16rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
 
 // --- Sidebar Provider ---

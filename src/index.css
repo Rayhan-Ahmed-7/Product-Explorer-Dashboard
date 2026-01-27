@@ -19,3 +19,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: var(--radius-lg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--muted);
+  background-clip: content-box;
+}

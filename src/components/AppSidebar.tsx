@@ -1,4 +1,4 @@
-import { NavLink } from "react-router"
+import { Link, useLocation } from "react-router"
 import {
     Sidebar,
     SidebarContent,
@@ -7,16 +7,18 @@ import {
     SidebarMenuItem,
     SidebarMenuButton
 } from "@/components/ui/Sidebar"
-import { Package, Settings, Layers } from "lucide-react"
+import { Package, Settings, LayoutGrid, Shapes } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const menuItems = [
-    { title: "Products", to: "/products", icon: Package, end: true },
-    { title: "Categories", to: "/products/categories", icon: Layers },
+    { title: "Products", to: "/products", icon: LayoutGrid, end: true },
+    { title: "Categories", to: "/products/categories", icon: Shapes },
     { title: "Settings", to: "/settings", icon: Settings },
 ]
 
 export function AppSidebar() {
+    const location = useLocation()
+
     return (
         <Sidebar collapsible="icon">
             <SidebarHeader>
@@ -31,25 +33,29 @@ export function AppSidebar() {
             </SidebarHeader>
             <SidebarContent>
                 <SidebarMenu>
-                    {menuItems.map((item) => (
-                        <SidebarMenuItem key={item.to}>
-                            <SidebarMenuButton asChild>
-                                <NavLink to={item.to} end={item.end}>
-                                    {({ isActive }) => (
-                                        <>
-                                            <item.icon className={isActive ? "text-primary" : ""} />
-                                            <span className={cn(
-                                                isActive ? "font-bold text-primary" : "",
-                                                "group-data-[collapsible=icon]:hidden"
-                                            )}>
-                                                {item.title}
-                                            </span>
-                                        </>
+                    {menuItems.map((item) => {
+                        const isActive = item.end
+                            ? location.pathname === item.to
+                            : location.pathname.startsWith(item.to)
+
+                        return (
+                            <SidebarMenuItem key={item.to}>
+                                <SidebarMenuButton
+                                    asChild
+                                    className={cn(
+                                        isActive && "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground font-medium"
                                     )}
-                                </NavLink>
-                            </SidebarMenuButton>
-                        </SidebarMenuItem>
-                    ))}
+                                >
+                                    <Link to={item.to} aria-current={isActive ? 'page' : undefined}>
+                                        <item.icon />
+                                        <span className="group-data-[collapsible=icon]:hidden">
+                                            {item.title}
+                                        </span>
+                                    </Link>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        )
+                    })}
                 </SidebarMenu>
             </SidebarContent>
         </Sidebar>
