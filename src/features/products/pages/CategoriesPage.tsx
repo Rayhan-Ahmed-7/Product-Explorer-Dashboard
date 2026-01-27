@@ -3,7 +3,8 @@ import { useCategories } from '../hooks/useCategories'
 import { useProductsUIStore } from '../stores/useProductsUIStore'
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/Table'
 import { Button } from '@/components/ui/Button'
-import { Loader2, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import { CategoryListSkeleton } from '../components/CategoryListSkeleton'
 
 export default function CategoriesPage() {
     const navigate = useNavigate()
@@ -25,9 +26,7 @@ export default function CategoriesPage() {
             </div>
 
             {isLoading ? (
-                <div className="flex items-center justify-center py-12">
-                    <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                </div>
+                <CategoryListSkeleton />
             ) : isError ? (
                 <div className="rounded-lg border border-destructive bg-destructive/10 p-6 text-center">
                     <p className="text-destructive font-medium">Failed to load categories</p>
