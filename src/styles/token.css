@@ -136,8 +136,8 @@
 
     /* Semantic colors are now global in :root */
 
-    --border: oklch(0.9602 0.0034 247.86);
-    --input: oklch(0.9602 0.0034 247.86);
+    --border: oklch(0.94 0.005 240);
+    --input: oklch(0.94 0.005 240);
     --ring: oklch(0.5282 0.2286 262.29);
 }
 
