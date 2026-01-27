@@ -14,24 +14,24 @@ export default function SettingsPage() {
     const { currency, setCurrency } = useCurrency()
 
     return (
-        <div className="space-y-8 p-8 max-w-6xl mx-auto">
+        <div className="space-y-8 p-4 md:p-8 max-w-6xl mx-auto">
             <div className="space-y-2">
-                <h1 className="text-4xl font-extrabold tracking-tight">Settings</h1>
+                <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Settings</h1>
                 <p className="text-lg text-muted-foreground">
                     Manage your global display settings and currency localization.
                 </p>
             </div>
 
             <div className="space-y-4">
-                <h2 className="text-xl font-bold border-b pb-2">Preferences</h2>
+                <h2 className="text-lg md:text-xl font-bold border-b pb-2">Preferences</h2>
 
                 <Card className="border-none shadow-sm bg-card/50">
-                    <CardContent className="p-8">
-                        <div className="flex flex-col lg:flex-row gap-12">
+                    <CardContent className="p-4 md:p-8">
+                        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
                             {/* Description Side */}
-                            <div className="lg:w-1/3 space-y-3">
-                                <h3 className="text-lg font-bold">Global Currency</h3>
-                                <p className="text-sm text-muted-foreground leading-relaxed">
+                            <div className="lg:w-1/3 space-y-2 md:space-y-3">
+                                <h3 className="text-base md:text-lg font-bold">Global Currency</h3>
+                                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                                     Choose the default currency for price displays across the Product Explorer and Inventory modules.
                                 </p>
                             </div>
@@ -45,7 +45,7 @@ export default function SettingsPage() {
                                             <div
                                                 key={item.id}
                                                 className={cn(
-                                                    "group relative flex flex-col items-center justify-center gap-3 rounded-xl border-2 p-6 transition-all duration-200 cursor-pointer",
+                                                    "group relative flex flex-col items-center justify-center gap-3 rounded-xl border-2 p-4 sm:p-6 transition-all duration-200 cursor-pointer",
                                                     isSelected
                                                         ? "border-primary bg-primary/5 ring-1 ring-primary/20"
                                                         : "border-muted bg-background hover:border-muted-foreground/30 hover:bg-muted/5"
@@ -84,7 +84,7 @@ export default function SettingsPage() {
                         </div>
 
                         {/* Note area */}
-                        <div className="mt-10 flex gap-3 rounded-lg bg-muted/30 p-4 border border-muted/50">
+                        <div className="mt-8 flex flex-col sm:flex-row gap-3 rounded-lg bg-muted/30 p-4 border border-muted/50">
                             <Info className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
                             <p className="text-sm text-muted-foreground leading-snug">
                                 <span className="font-medium text-foreground/80">Note:</span> Changing currency will update all inventory prices based on current exchange rates stored in the system.
