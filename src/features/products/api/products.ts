@@ -1,10 +1,16 @@
 import { api } from '@/lib/axios'
-import type { ProductsResponse, Category, CategoryList, ProductQueryParams } from '../types/product'
+import type { ProductsResponse, Category, CategoryList, ProductQueryParams, Product } from '../types/product'
 
 export const productsApi = {
     // Get products with pagination, sorting, and filtering
     getProducts: async (params: ProductQueryParams = {}): Promise<ProductsResponse> => {
         const { data } = await api.get<ProductsResponse>('/products', { params })
+        return data
+    },
+
+    // Get single product by ID
+    getProductById: async (id: number): Promise<Product> => {
+        const { data } = await api.get<Product>(`/products/${id}`)
         return data
     },
 
