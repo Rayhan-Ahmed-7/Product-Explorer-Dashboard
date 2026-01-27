@@ -2,15 +2,6 @@
 @import "./styles/token.css";
 
 @layer base {
-
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-border, currentColor);
-  }
-
   body {
     @apply bg-background text-foreground;
   }

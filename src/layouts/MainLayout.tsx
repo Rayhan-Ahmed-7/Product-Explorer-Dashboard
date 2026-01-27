@@ -13,7 +13,7 @@ export default function MainLayout() {
         <SidebarProvider>
             <AppSidebar />
             <SidebarInset>
-                <header className="flex h-14 items-center justify-between border-b bg-card px-6">
+                <header className="flex h-14 items-center justify-between border-b border-border bg-card px-6">
                     <div className="flex items-center gap-4">
                         <SidebarTrigger />
                     </div>

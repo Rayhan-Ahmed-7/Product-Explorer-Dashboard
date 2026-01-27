@@ -206,7 +206,7 @@ export default function ProductListPage() {
                 </div>
             ) : (
                 <>
-                    <div className="rounded-lg border">
+                    <div className="rounded-lg border border-border">
                         <Table>
                             <TableHeader>
                                 <TableRow>
@@ -240,7 +240,7 @@ export default function ProductListPage() {
                                                     <div>
                                                         <Link
                                                             to={`/products/${product.id}`}
-                                                            className="font-medium hover:text-primary transition-colors hover:underline"
+                                                            className="font-medium hover:text-primary hover:underline"
                                                         >
                                                             {product.title}
                                                         </Link>

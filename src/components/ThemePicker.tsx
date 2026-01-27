@@ -89,7 +89,7 @@ export function ThemePicker() {
                                         key={m.value}
                                         onClick={() => setMode(m.value)}
                                         className={cn(
-                                            "flex-1 flex items-center justify-center py-1.5 rounded-full transition-all capitalize text-xs gap-2",
+                                            "flex-1 flex items-center justify-center py-1.5 rounded-full capitalize text-xs gap-2",
                                             mode === m.value
                                                 ? "bg-accent text-accent-foreground shadow-sm font-medium"
                                                 : "text-muted-foreground hover:bg-muted/50"
