@@ -9,6 +9,8 @@ import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@
 import { Select } from '@/components/ui/Select'
 import { Loader2 } from 'lucide-react'
 import { Badge } from '@/components/ui/Badge'
+import { ProductRowSkeleton } from '../components/ProductRowSkeleton'
+import { ProductListSkeleton } from '../components/ProductListSkeleton'
 
 export default function ProductListPage() {
     const { category, sortBy, sortOrder, setCategory, setSortBy, setSortOrder } = useProductsUIStore()
@@ -122,9 +124,7 @@ export default function ProductListPage() {
             </div>
 
             {isLoading ? (
-                <div className="flex items-center justify-center py-12">
-                    <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                </div>
+                <ProductListSkeleton />
             ) : isError ? (
                 <div className="rounded-lg border border-destructive bg-destructive/10 p-6 text-center">
                     <p className="text-destructive font-medium">Failed to load products</p>
@@ -198,15 +198,19 @@ export default function ProductListPage() {
                                         </TableCell>
                                     </TableRow>
                                 ))}
+                                {isFetchingNextPage && (
+                                    <>
+                                        {[...Array(20)].map((_, i) => (
+                                            <ProductRowSkeleton key={`skeleton-${i}`} />
+                                        ))}
+                                    </>
+                                )}
                             </TableBody>
                         </Table>
                     </div>
 
                     {/* Infinite Scroll Trigger */}
                     <div ref={observerTarget} className="flex justify-center py-4">
-                        {isFetchingNextPage && (
-                            <Loader2 className="h-6 w-6 animate-spin text-primary" />
-                        )}
                         {!hasNextPage && allProducts.length > 0 && (
                             <p className="text-sm text-muted-foreground">No more products to load</p>
                         )}
