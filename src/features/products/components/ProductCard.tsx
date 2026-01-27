@@ -12,7 +12,10 @@ export function ProductCard({ product }: ProductCardProps) {
     const { currency } = useCurrency()
 
     return (
-        <div className="group relative rounded-lg border border-border bg-card p-4 transition-shadow hover:shadow-md">
+        <Link
+            to={`/products/${product.id}`}
+            className="group relative block rounded-lg border border-border bg-card p-4 transition-shadow hover:shadow-md"
+        >
             <div className="flex gap-4">
                 {/* Image */}
                 <div className="h-24 w-24 shrink-0 overflow-hidden rounded-md border border-border bg-muted">
@@ -27,12 +30,9 @@ export function ProductCard({ product }: ProductCardProps) {
                 <div className="flex flex-1 flex-col justify-between">
                     <div>
                         <div className="flex items-start justify-between gap-2">
-                            <Link
-                                to={`/products/${product.id}`}
-                                className="font-medium hover:text-primary hover:underline line-clamp-2"
-                            >
+                            <h3 className="font-medium text-foreground group-hover:text-primary group-hover:underline line-clamp-2">
                                 {product.title}
-                            </Link>
+                            </h3>
                             <div className="flex items-center gap-1 text-sm font-medium">
                                 <span className="text-yellow-500">★</span>
                                 {product.rating.toFixed(1)}
@@ -62,6 +62,6 @@ export function ProductCard({ product }: ProductCardProps) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
