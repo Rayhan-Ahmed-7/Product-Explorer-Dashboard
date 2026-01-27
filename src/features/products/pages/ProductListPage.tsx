@@ -7,6 +7,7 @@ import { formatPrice } from '@/lib/currencyUtils'
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/Table'
 import { Select } from '@/components/ui/Select'
 import { Loader2 } from 'lucide-react'
+import { Badge } from '@/components/ui/Badge'
 
 export default function ProductListPage() {
     const { category, sortBy, sortOrder, setCategory, setSortBy, setSortOrder } = useProductsUIStore()
@@ -82,7 +83,7 @@ export default function ProductListPage() {
         <div className="space-y-6 p-6">
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold">Products</h1>
+                    <h1 className="text-3xl font-bold text-foreground">Products</h1>
                     <p className="text-muted-foreground mt-1">
                         {totalProducts} products available
                     </p>
@@ -162,25 +163,26 @@ export default function ProductListPage() {
                                             </div>
                                         </TableCell>
                                         <TableCell>
-                                            <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                                            <Badge variant="info">
                                                 {product.category}
-                                            </span>
+                                            </Badge>
                                         </TableCell>
                                         <TableCell>{product.brand || '-'}</TableCell>
                                         <TableCell className="text-right font-medium">
                                             {formatPrice(product.price, currency)}
                                         </TableCell>
                                         <TableCell className="text-right">
-                                            <span
-                                                className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${product.stock > 50
-                                                    ? 'bg-green-100 text-green-800'
-                                                    : product.stock > 0
-                                                        ? 'bg-yellow-100 text-yellow-800'
-                                                        : 'bg-red-100 text-red-800'
-                                                    }`}
+                                            <Badge
+                                                variant={
+                                                    product.stock > 50
+                                                        ? 'success'
+                                                        : product.stock > 0
+                                                            ? 'warning'
+                                                            : 'destructive'
+                                                }
                                             >
                                                 {product.stock}
-                                            </span>
+                                            </Badge>
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <div className="flex items-center justify-end gap-1">
