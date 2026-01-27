@@ -9,6 +9,8 @@ import { Select } from '@/components/ui/Select'
 import { Badge } from '@/components/ui/Badge'
 import { ProductRowSkeleton } from '../components/ProductRowSkeleton'
 import { ProductListSkeleton } from '../components/ProductListSkeleton'
+import { ProductCard } from '../components/ProductCard'
+import { ProductCardSkeleton } from '../components/ProductCardSkeleton'
 import { useDebounce } from '@/hooks/useDebounce'
 import { Search, X } from 'lucide-react'
 import { useProductsUIStore } from '../stores/useProductsUIStore'
@@ -206,7 +208,8 @@ export default function ProductListPage() {
                 </div>
             ) : (
                 <>
-                    <div className="rounded-lg border border-border">
+                    {/* Desktop View (Table) */}
+                    <div className="hidden md:block rounded-lg border border-border">
                         <Table>
                             <TableHeader>
                                 <TableRow>
@@ -290,6 +293,26 @@ export default function ProductListPage() {
                                 )}
                             </TableBody>
                         </Table>
+                    </div>
+
+                    {/* Mobile View (Cards) */}
+                    <div className="grid grid-cols-1 gap-4 md:hidden">
+                        {allProducts.length === 0 ? (
+                            <div className="rounded-lg border border-border p-6 text-center text-muted-foreground">
+                                No products found matching your criteria
+                            </div>
+                        ) : (
+                            allProducts.map((product) => (
+                                <ProductCard key={product.id} product={product} />
+                            ))
+                        )}
+                        {isFetchingNextPage && (
+                            <>
+                                {[...Array(4)].map((_, i) => (
+                                    <ProductCardSkeleton key={`skeleton-mobile-${i}`} />
+                                ))}
+                            </>
+                        )}
                     </div>
 
                     {/* Infinite Scroll Trigger */}
