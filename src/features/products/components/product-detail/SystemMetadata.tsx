@@ -16,28 +16,34 @@ export function SystemMetadata({ meta }: SystemMetadataProps) {
                 <Database className="h-5 w-5 text-info" />
                 <h3 className="text-sm font-semibold text-card-foreground">System Metadata</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                    <p className="text-xs text-muted-foreground uppercase mb-2">Barcode (UPC/EAN)</p>
-                    <p className="text-sm font-mono text-card-foreground">{meta.barcode}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="space-y-1">
+                    <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Barcode (UPC/EAN)</p>
+                    <div className="bg-accent/30 p-2 rounded border border-border/50">
+                        <p className="text-sm font-mono text-card-foreground break-all">{meta.barcode}</p>
+                    </div>
                 </div>
-                <div>
-                    <p className="text-xs text-muted-foreground uppercase mb-2">Date Created</p>
-                    <p className="text-sm font-medium text-card-foreground">
-                        {new Date(meta.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                        {new Date(meta.createdAt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
-                    </p>
+                <div className="space-y-1">
+                    <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Date Created</p>
+                    <div>
+                        <p className="text-sm font-semibold text-card-foreground">
+                            {new Date(meta.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                            {new Date(meta.createdAt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <p className="text-xs text-muted-foreground uppercase mb-2">Last Updated</p>
-                    <p className="text-sm font-medium text-card-foreground">
-                        {new Date(meta.updatedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                        {new Date(meta.updatedAt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
-                    </p>
+                <div className="space-y-1 sm:col-span-2 md:col-span-1">
+                    <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Last Updated</p>
+                    <div>
+                        <p className="text-sm font-semibold text-card-foreground">
+                            {new Date(meta.updatedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                            {new Date(meta.updatedAt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+                        </p>
+                    </div>
                 </div>
             </div>
         </Card>
