@@ -142,7 +142,7 @@ export function ProductDetailSkeleton() {
                                 <div key={i} className="pb-6 border-b border-border last:border-b-0 last:pb-0">
                                     {/* Mobile Skeleton: Mirrors md:hidden block in ReviewsList */}
                                     <div className="md:hidden space-y-3">
-                                        <div className="flex items-start justify-between gap-4">
+                                        <div className="flex items-start justify-between gap-4 min-w-0">
                                             <div className="flex items-center gap-3 min-w-0 flex-1">
                                                 <Skeleton className="h-10 w-10 rounded-full shrink-0" />
                                                 <div className="min-w-0 space-y-1 flex-1">

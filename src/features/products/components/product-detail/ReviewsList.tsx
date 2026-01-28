@@ -23,14 +23,14 @@ export function ReviewsList({ reviews, maxReviews = 3 }: ReviewsListProps) {
                     <div key={idx} className="pb-6 border-b border-border last:border-b-0 last:pb-0">
                         {/* Mobile Layout: Stacked with grouping */}
                         <div className="md:hidden space-y-3">
-                            <div className="flex items-start justify-between gap-4">
-                                <div className="flex items-center gap-3">
+                            <div className="flex items-start justify-between gap-4 min-w-0">
+                                <div className="flex items-center gap-3 min-w-0 flex-1">
                                     <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20">
                                         <span className="text-sm font-semibold text-primary">
                                             {review.reviewerName.split(' ').map((n: string) => n[0]).join('')}
                                         </span>
                                     </div>
-                                    <div className="min-w-0">
+                                    <div className="min-w-0 flex-1">
                                         <p className="text-sm font-semibold text-card-foreground truncate">{review.reviewerName}</p>
                                         <p className="text-[10px] text-muted-foreground truncate">{review.reviewerEmail}</p>
                                     </div>
