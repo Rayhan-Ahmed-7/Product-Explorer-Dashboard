@@ -2,7 +2,7 @@ import { Card } from '@/components/ui/Card'
 import { formatPrice } from '@/lib/currencyUtils'
 import type { Currency } from '@/lib/currencyUtils'
 
-interface CoreSpecificationsProps {
+interface ProductSpecificationsProps {
     brand?: string
     category: string
     tags: string[]
@@ -10,10 +10,10 @@ interface CoreSpecificationsProps {
     currency: Currency
 }
 
-export function CoreSpecifications({ brand, category, tags, price, currency }: CoreSpecificationsProps) {
+export function ProductSpecifications({ brand, category, tags, price, currency }: ProductSpecificationsProps) {
     return (
         <Card>
-            <h3 className="text-sm font-semibold uppercase text-muted-foreground mb-4">Core Specifications</h3>
+            <h3 className="text-sm font-semibold uppercase text-muted-foreground mb-4">Product Specifications</h3>
             <div className="space-y-3">
                 <div className="flex justify-between py-2 border-b border-border">
                     <span className="text-sm text-muted-foreground">Brand</span>

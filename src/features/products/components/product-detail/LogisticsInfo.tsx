@@ -33,12 +33,6 @@ export function LogisticsInfo({ dimensions, weight, shippingInformation }: Logis
                     <p className="text-xs text-muted-foreground uppercase mb-2">Shipping Class</p>
                     <p className="text-sm font-medium text-card-foreground">{shippingInformation}</p>
                 </div>
-                <div className="col-span-2">
-                    <p className="text-xs text-muted-foreground uppercase mb-2">Handling Notes</p>
-                    <p className="text-sm text-muted-foreground italic">
-                        Fragile, store in cool environment away from direct sunlight.
-                    </p>
-                </div>
             </div>
         </Card>
     )

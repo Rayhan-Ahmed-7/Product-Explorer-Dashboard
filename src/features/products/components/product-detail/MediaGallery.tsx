@@ -12,7 +12,7 @@ export function MediaGallery({ images, thumbnail, title }: MediaGalleryProps) {
 
     return (
         <Card>
-            <h3 className="text-sm font-semibold uppercase text-muted-foreground mb-4">Media Gallery</h3>
+            <h3 className="text-sm font-semibold uppercase text-muted-foreground mb-4">Photo Gallery</h3>
             <div className="space-y-4">
                 <div className="aspect-square rounded-lg overflow-hidden bg-muted">
                     <img

@@ -32,17 +32,6 @@ export function PoliciesSection({ returnPolicy, warrantyInformation }: PoliciesS
                         <p className="text-sm font-medium text-card-foreground">{warrantyInformation}</p>
                     </div>
                 </div>
-                <div className="flex items-start gap-3">
-                    <div className="mt-0.5">
-                        <div className="h-2 w-2 rounded-full bg-success"></div>
-                    </div>
-                    <div>
-                        <p className="text-xs text-muted-foreground uppercase mb-1">Claims Process</p>
-                        <p className="text-sm text-muted-foreground">
-                            Verification required for items &gt; $40. High value handling applies.
-                        </p>
-                    </div>
-                </div>
             </div>
         </Card>
     )

@@ -1,7 +1,7 @@
 import { Card } from '@/components/ui/Card'
 import { Database } from 'lucide-react'
 
-interface SystemMetadataProps {
+interface ProductMetadataProps {
     meta: {
         barcode: string
         createdAt: string
@@ -9,12 +9,12 @@ interface SystemMetadataProps {
     }
 }
 
-export function SystemMetadata({ meta }: SystemMetadataProps) {
+export function ProductMetadata({ meta }: ProductMetadataProps) {
     return (
         <Card>
             <div className="flex items-center gap-2 mb-4">
                 <Database className="h-5 w-5 text-info" />
-                <h3 className="text-sm font-semibold text-card-foreground">System Metadata</h3>
+                <h3 className="text-sm font-semibold text-card-foreground">Product Metadata</h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="space-y-1">

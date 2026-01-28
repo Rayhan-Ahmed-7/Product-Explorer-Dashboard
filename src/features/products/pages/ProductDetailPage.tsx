@@ -7,10 +7,10 @@ import { useCurrency } from '@/context/CurrencyContext'
 import { InfoCard } from '../components/product-detail/InfoCard'
 import { MediaGallery } from '../components/product-detail/MediaGallery'
 import { ProductDescription } from '../components/product-detail/ProductDescription'
-import { CoreSpecifications } from '../components/product-detail/CoreSpecifications'
+import { ProductSpecifications } from '../components/product-detail/ProductSpecifications'
 import { LogisticsInfo } from '../components/product-detail/LogisticsInfo'
 import { PoliciesSection } from '../components/product-detail/PoliciesSection'
-import { SystemMetadata } from '../components/product-detail/SystemMetadata'
+import { ProductMetadata } from '../components/product-detail/ProductMetadata'
 import { ReviewsList } from '../components/product-detail/ReviewsList'
 import { ProductDetailSkeleton } from '../components/product-detail/ProductDetailSkeleton'
 
@@ -93,7 +93,7 @@ export default function ProductDetailPage() {
 
                     <ProductDescription description={product.description} />
 
-                    <CoreSpecifications
+                    <ProductSpecifications
                         brand={product.brand}
                         category={product.category}
                         tags={product.tags}
@@ -115,7 +115,7 @@ export default function ProductDetailPage() {
                         warrantyInformation={product.warrantyInformation}
                     />
 
-                    <SystemMetadata meta={product.meta} />
+                    <ProductMetadata meta={product.meta} />
 
                     <ReviewsList reviews={product.reviews} />
                 </div>
