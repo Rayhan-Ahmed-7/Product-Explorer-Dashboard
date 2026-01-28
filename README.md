@@ -51,3 +51,7 @@ Yes, I did use AI tools for the following:
 | Orange Theme (Dark)                                         | Violet Theme (Dark)                                         |
 | ----------------------------------------------------------- | ----------------------------------------------------------- |
 | ![Orange Dark](public/screenshots/products-orange-dark.png) | ![Violet Dark](public/screenshots/products-violet-dark.png) |
+
+| Mobile View (Light)                                               | Mobile View (Dark)                                              |
+| ----------------------------------------------------------------- | --------------------------------------------------------------- |
+| ![Mobile Light](public/screenshots/phone-products-blue-light.png) | ![Mobile Dark](public/screenshots/phone-products-blue-dark.png) |
