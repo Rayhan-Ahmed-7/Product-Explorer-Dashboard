@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Palette, Check, Maximize2, Moon, Sun, Monitor } from "lucide-react"
+import { Palette, Check, Moon, Sun, Monitor } from "lucide-react"
 import { useThemeStore, THEMES, type Mode } from "@/store/useThemeStore"
 import { cn } from "@/lib/utils"
 
