@@ -1,7 +1,7 @@
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Star } from 'lucide-react'
-import type { ProductReview } from '../types/product'
+import type { ProductReview } from '../../types/product'
 
 interface ReviewsListProps {
     reviews: ProductReview[]
@@ -21,10 +21,10 @@ export function ReviewsList({ reviews, maxReviews = 3 }: ReviewsListProps) {
             <div className="space-y-4">
                 {reviews.slice(0, maxReviews).map((review, idx) => (
                     <div key={idx} className="pb-4 border-b border-border last:border-b-0">
-                        <div className="grid grid-cols-12 gap-4 items-start">
-                            <div className="col-span-3">
+                        <div className="flex flex-col md:grid md:grid-cols-12 gap-2 md:gap-4 items-start">
+                            <div className="md:col-span-3 w-full">
                                 <div className="flex items-center gap-2 mb-1">
-                                    <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                                         <span className="text-xs font-semibold text-primary">
                                             {review.reviewerName.split(' ').map((n: string) => n[0]).join('')}
                                         </span>
@@ -35,24 +35,26 @@ export function ReviewsList({ reviews, maxReviews = 3 }: ReviewsListProps) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-span-2">
-                                <p className="text-xs text-muted-foreground uppercase mb-1">Rating</p>
-                                <div className="flex items-center gap-1">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className={`h-3 w-3 ${i < review.rating ? 'fill-yellow-500 text-yellow-500' : 'text-muted'
-                                                }`}
-                                        />
-                                    ))}
-                                    <span className="text-xs font-medium ml-1">{review.rating.toFixed(1)}</span>
+                            <div className="md:col-span-2 w-full">
+                                <div className="flex items-center justify-between md:block">
+                                    <p className="text-xs text-muted-foreground uppercase mb-1 md:mb-1">Rating</p>
+                                    <div className="flex items-center gap-1">
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star
+                                                key={i}
+                                                className={`h-3 w-3 ${i < review.rating ? 'fill-yellow-500 text-yellow-500' : 'text-muted'
+                                                    }`}
+                                            />
+                                        ))}
+                                        <span className="text-xs font-medium ml-1">{review.rating.toFixed(1)}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-span-5">
+                            <div className="md:col-span-5 w-full">
                                 <p className="text-xs text-muted-foreground uppercase mb-1">Comment</p>
                                 <p className="text-sm text-card-foreground line-clamp-2">{review.comment}</p>
                             </div>
-                            <div className="col-span-2 text-right">
+                            <div className="md:col-span-2 w-full md:text-right flex justify-between md:block">
                                 <p className="text-xs text-muted-foreground uppercase mb-1">Date</p>
                                 <p className="text-xs font-medium text-card-foreground">
                                     {new Date(review.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}

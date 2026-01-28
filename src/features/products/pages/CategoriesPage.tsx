@@ -4,8 +4,8 @@ import { useProductsUIStore } from '../stores/useProductsUIStore'
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/Table'
 import { Button } from '@/components/ui/Button'
 import { ArrowRight } from 'lucide-react'
-import { CategoryListSkeleton } from '../components/CategoryListSkeleton'
-import { CategoryCard } from '../components/CategoryCard'
+import { CategoryListSkeleton } from '../components/product-category/CategoryListSkeleton'
+import { CategoryCard } from '../components/product-category/CategoryCard'
 
 export default function CategoriesPage() {
     const navigate = useNavigate()

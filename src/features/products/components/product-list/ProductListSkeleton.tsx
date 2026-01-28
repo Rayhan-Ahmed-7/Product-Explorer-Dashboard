@@ -1,6 +1,6 @@
 import { Table, TableHeader, TableRow, TableHead, TableBody } from '@/components/ui/Table'
 import { ProductRowSkeleton } from './ProductRowSkeleton'
-import { ProductCardSkeleton } from './ProductCardSkeleton'
+import { ProductCardSkeleton } from '../shared/ProductCardSkeleton'
 
 export function ProductListSkeleton() {
     return (

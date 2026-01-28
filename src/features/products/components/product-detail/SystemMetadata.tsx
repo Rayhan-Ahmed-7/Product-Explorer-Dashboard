@@ -16,7 +16,7 @@ export function SystemMetadata({ meta }: SystemMetadataProps) {
                 <Database className="h-5 w-5 text-info" />
                 <h3 className="text-sm font-semibold text-card-foreground">System Metadata</h3>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                     <p className="text-xs text-muted-foreground uppercase mb-2">Barcode (UPC/EAN)</p>
                     <p className="text-sm font-mono text-card-foreground">{meta.barcode}</p>

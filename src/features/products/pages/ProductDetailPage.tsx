@@ -4,15 +4,15 @@ import { Button } from "@/components/ui/Button"
 import { Card } from '@/components/ui/Card'
 import { ArrowLeft, Package, Barcode, TrendingUp, Star } from "lucide-react"
 import { useCurrency } from '@/context/CurrencyContext'
-import { InfoCard } from '../components/InfoCard'
-import { MediaGallery } from '../components/MediaGallery'
-import { ProductDescription } from '../components/ProductDescription'
-import { CoreSpecifications } from '../components/CoreSpecifications'
-import { LogisticsInfo } from '../components/LogisticsInfo'
-import { PoliciesSection } from '../components/PoliciesSection'
-import { SystemMetadata } from '../components/SystemMetadata'
-import { ReviewsList } from '../components/ReviewsList'
-import { ProductDetailSkeleton } from '../components/ProductDetailSkeleton'
+import { InfoCard } from '../components/product-detail/InfoCard'
+import { MediaGallery } from '../components/product-detail/MediaGallery'
+import { ProductDescription } from '../components/product-detail/ProductDescription'
+import { CoreSpecifications } from '../components/product-detail/CoreSpecifications'
+import { LogisticsInfo } from '../components/product-detail/LogisticsInfo'
+import { PoliciesSection } from '../components/product-detail/PoliciesSection'
+import { SystemMetadata } from '../components/product-detail/SystemMetadata'
+import { ReviewsList } from '../components/product-detail/ReviewsList'
+import { ProductDetailSkeleton } from '../components/product-detail/ProductDetailSkeleton'
 
 export default function ProductDetailPage() {
     const { id } = useParams()
