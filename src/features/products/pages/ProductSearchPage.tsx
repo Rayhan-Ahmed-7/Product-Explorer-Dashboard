@@ -1,6 +1,6 @@
 import { ProductList } from '../components/product-list/ProductList'
 
 export default function ProductSearchPage() {
-    return <ProductList title="Search Results" />
+    return <ProductList title="Search Products" />
 }
 
