@@ -23,7 +23,7 @@ export function InfoCard({ icon: Icon, label, value, badge, subtext }: InfoCardP
                 <div className="flex-1 min-w-0">
                     <p className="text-xs text-muted-foreground uppercase mb-1">{label}</p>
                     <div className="flex items-center gap-2">
-                        <p className="font-semibold text-card-foreground truncate">{value}</p>
+                        <p className="font-semibold text-card-foreground">{value}</p>
                         {badge && (
                             <Badge variant={badge.variant} className="text-xs">
                                 {badge.text}

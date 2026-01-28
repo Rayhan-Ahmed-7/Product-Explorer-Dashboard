@@ -17,7 +17,7 @@ export function ReviewsList({ reviews, maxReviews = 3 }: ReviewsListProps) {
                     VIEW ALL FEEDBACKS
                 </Button>
             </div>
-            <p className="text-xs text-muted-foreground mb-4">Showing latest {maxReviews} verified transactions</p>
+            <p className="text-xs text-muted-foreground mb-4">Showing latest {maxReviews} verified reviews</p>
             <div className="space-y-6">
                 {reviews.slice(0, maxReviews).map((review, idx) => (
                     <div key={idx} className="pb-6 border-b border-border last:border-b-0 last:pb-0">
