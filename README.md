@@ -22,6 +22,40 @@ src/
 └── styles/             # Global CSS and tokens
 ```
 
+## Getting Started
+
+### Prerequisites
+
+This project uses **pnpm** as the package manager. If you don't have it installed, you can install it via npm:
+
+```bash
+npm install -g pnpm
+```
+
+```bash
+corepack enable
+corepack prepare pnpm@latest --activate
+```
+
+### Installation & Setup
+
+1. **Install dependencies:**
+
+   ```bash
+   pnpm install
+   ```
+
+2. **Run the development server:**
+
+   ```bash
+   pnpm dev
+   ```
+
+3. **Build for production:**
+   ```bash
+   pnpm build
+   ```
+
 ## Assessment Questions
 
 ### 1. What trade-offs did you consciously make due to time constraints?
