@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-export type Theme = 'blue' | 'orange' | 'violet'
+export type Theme = 'blue' | 'orange' | 'violet' | 'justGo'
 export type Mode = 'light' | 'dark' | 'system'
 
 export interface ThemeMetadata {
@@ -29,6 +29,12 @@ export const THEMES: ThemeMetadata[] = [
         name: 'Amethyst Night',
         description: 'Elegant royal purple aesthetics',
         colorClass: 'bg-violet-500'
+    },
+    {
+        id: 'justGo',
+        name: 'JustGo Green',
+        description: 'Vibrant and modern green theme',
+        colorClass: 'bg-green-500'
     }
 ]
 

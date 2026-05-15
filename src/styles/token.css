@@ -43,11 +43,11 @@
     --line-height-lg: 1.75;
 
     /* Spacing Scale */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
+    --app-spacing-xs: 0.25rem;
+    --app-spacing-sm: 0.5rem;
+    --app-spacing-md: 1rem;
+    --app-spacing-lg: 1.5rem;
+    --app-spacing-xl: 2rem;
 
     /* Color Tokens */
     --color-background: var(--background);
@@ -272,4 +272,67 @@
     --border: oklch(0.2781 0.0296 300);
     --input: oklch(0.2781 0.0296 300);
     --ring: oklch(0.65 0.26 300);
+}
+
+/* =====================
+   JUSTGO THEME
+   ===================== */
+[data-theme="justGo"][data-mode="light"] {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.2 0.01 145);
+    --primary: oklch(0.65 0.16 145);
+    --primary-foreground: oklch(0.98 0.01 145);
+    --secondary: oklch(0.95 0.02 145);
+    --secondary-foreground: oklch(0.2 0.01 145);
+    --muted: oklch(0.96 0.01 145);
+    --muted-foreground: oklch(0.45 0.01 145);
+    --accent: oklch(0.96 0.01 145);
+    --accent-foreground: oklch(0.2 0.01 145);
+    --destructive: oklch(0.55 0.22 15);
+    --destructive-foreground: oklch(0.98 0.01 15);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.2 0.01 145);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.2 0.01 145);
+
+    /* Semantic colors inherited from :root */
+
+    --border: oklch(0.92 0.01 145);
+    --input: oklch(0.92 0.01 145);
+    --ring: oklch(0.65 0.16 145);
+}
+
+[data-theme="justGo"][data-mode="dark"] {
+    --background: oklch(0.18 0.02 145);
+    --foreground: oklch(1 0 0);
+    --primary: oklch(0.65 0.16 145);
+    --primary-foreground: oklch(0.98 0.01 145);
+    --secondary: oklch(0.3 0.02 145);
+    /* Lighter for visibility */
+    --secondary-foreground: oklch(1 0 0);
+    --muted: oklch(0.25 0.02 145);
+    --muted-foreground: oklch(0.7 0.02 145);
+    --accent: oklch(0.25 0.02 145);
+    --accent-foreground: oklch(1 0 0);
+    --destructive: oklch(0.55 0.25 15);
+    --destructive-foreground: oklch(0.98 0.01 15);
+    --card: oklch(0.22 0.02 145);
+    --card-foreground: oklch(1 0 0);
+    --popover: oklch(0.22 0.02 145);
+    --popover-foreground: oklch(1 0 0);
+
+    /* Semantic colors inherited from :root */
+
+    --border: oklch(0.28 0.02 145);
+    --input: oklch(0.28 0.02 145);
+    --ring: oklch(0.65 0.16 145);
+}
+
+@keyframes infinite-loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}
+
+.animate-infinite-loading {
+    animation: infinite-loading 1.5s infinite linear;
 }

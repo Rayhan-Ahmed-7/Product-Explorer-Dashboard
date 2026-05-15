@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import "./styles/token.css";
+@import "tailwindcss";
 
 @layer base {
   body {
@@ -35,4 +35,13 @@
   border-radius: var(--radius-lg);
   border: 3px solid var(--muted);
   background-clip: content-box;
+}
+
+/* AppLogo Dark Mode Styles */
+:root[data-mode="dark"] .app-logo-dark {
+  display: none !important;
+}
+
+:root[data-mode="light"] .app-logo-white {
+  display: none !important;
 }

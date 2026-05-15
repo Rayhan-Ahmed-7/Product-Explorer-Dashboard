@@ -1,15 +1,15 @@
-import { Table, TableHeader, TableRow, TableHead, TableBody } from '@/components/ui/Table'
-import { ProductRowSkeleton } from './ProductRowSkeleton'
+import { DataTableSkeletonRows } from '@/components/ui/DataTable'
+import { Table, TableHeader, TableRow, TableHead } from '@/components/ui/Table'
 import { ProductCardSkeleton } from '../shared/ProductCardSkeleton'
 
 export function ProductListSkeleton() {
     return (
         <div className="space-y-4">
-            {/* Desktop View (Table) */}
-            <div className="hidden md:block rounded-lg border">
+            {/* Desktop View (Table) — uses generic skeleton that mirrors column count */}
+            <div className="hidden md:block rounded-lg border border-border overflow-hidden">
                 <Table>
                     <TableHeader>
-                        <TableRow>
+                        <TableRow className="hover:bg-transparent">
                             <TableHead className="w-16">ID</TableHead>
                             <TableHead>Product</TableHead>
                             <TableHead>Category</TableHead>
@@ -19,11 +19,7 @@ export function ProductListSkeleton() {
                             <TableHead className="text-right">Rating</TableHead>
                         </TableRow>
                     </TableHeader>
-                    <TableBody>
-                        {[...Array(20)].map((_, i) => (
-                            <ProductRowSkeleton key={i} />
-                        ))}
-                    </TableBody>
+                    <DataTableSkeletonRows rowCount={20} columnCount={7} />
                 </Table>
             </div>
 

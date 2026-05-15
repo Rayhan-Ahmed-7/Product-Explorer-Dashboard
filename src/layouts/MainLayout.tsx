@@ -19,9 +19,9 @@ export default function MainLayout() {
                     </div>
                     <ThemePicker />
                 </header>
-                <main className="flex-1 overflow-auto">
+                <div className="flex-1 overflow-auto min-w-0">
                     <Outlet />
-                </main>
+                </div>
             </SidebarInset>
         </SidebarProvider>
     )

@@ -56,11 +56,11 @@ export function ProductFilters({
     ]
 
     return (
-        <div className="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+        <div className="flex flex-col gap-4 justify-start items-start w-full">
             {showSearch && (
-                <InputGroup className="w-full md:w-72">
+                <InputGroup className="w-full">
                     <InputLeftSlot>
-                        <Search className="h-4 w-4" />
+                        <Search className="h-4 w-4 text-muted-foreground" />
                     </InputLeftSlot>
                     <Input
                         value={searchTerm}
@@ -84,14 +84,14 @@ export function ProductFilters({
             )}
 
             {showFilters && (
-                <div className="flex flex-wrap gap-3 w-full md:w-auto">
+                <div className="flex flex-col gap-3 w-full">
                     {/* Category Filter */}
                     <Select
                         options={categoryOptions}
                         value={category}
                         onChange={setCategory}
                         placeholder="All Categories"
-                        className="w-full md:w-48"
+                        className="w-full"
                     />
 
                     {/* Sort By */}
@@ -100,7 +100,7 @@ export function ProductFilters({
                         value={sortBy}
                         onChange={setSortBy}
                         placeholder="Sort By"
-                        className="w-full md:w-40"
+                        className="w-full"
                     />
 
                     {/* Sort Order */}
@@ -109,7 +109,7 @@ export function ProductFilters({
                             options={sortOrderOptions}
                             value={sortOrder}
                             onChange={(value) => setSortOrder(value as 'asc' | 'desc')}
-                            className="w-full md:w-36"
+                            className="w-full"
                         />
                     )}
                 </div>
