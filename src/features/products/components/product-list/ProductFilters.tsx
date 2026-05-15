@@ -1,6 +1,6 @@
 import { Search, X } from 'lucide-react'
 import { Select } from '@/components/ui/Select'
-import { InputGroup, InputLeftSlot, InputRightSlot } from '@/components/ui/InputGroup'
+import { InputGroup, InputGroupAddon } from '@/components/ui/InputGroup'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/Button'
 
@@ -59,9 +59,9 @@ export function ProductFilters({
         <div className="flex flex-col gap-4 justify-start items-start w-full">
             {showSearch && (
                 <InputGroup className="w-full">
-                    <InputLeftSlot>
+                    <InputGroupAddon align="inline-start">
                         <Search className="h-4 w-4 text-muted-foreground" />
-                    </InputLeftSlot>
+                    </InputGroupAddon>
                     <Input
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
@@ -69,7 +69,7 @@ export function ProductFilters({
                         className="pl-10 pr-10"
                     />
                     {searchTerm && (
-                        <InputRightSlot>
+                        <InputGroupAddon align="inline-end">
                             <Button
                                 variant="ghost"
                                 size="sm"
@@ -78,7 +78,7 @@ export function ProductFilters({
                             >
                                 <X className="h-4 w-4" />
                             </Button>
-                        </InputRightSlot>
+                        </InputGroupAddon>
                     )}
                 </InputGroup>
             )}

@@ -12,8 +12,7 @@ import { ProductGridView } from './ProductGridView'
 import { Button } from '@/components/ui/Button'
 import { Plus, FileText, RefreshCw, SlidersHorizontal, Search, X } from 'lucide-react'
 import { DataTableToolbar, DataTableToolbarSection } from '@/components/ui/DataTable/DataTableToolbar'
-import { InputGroup, InputLeftSlot, InputRightSlot } from '@/components/ui/InputGroup'
-import { Input } from '@/components/ui/Input'
+import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/InputGroup'
 import { cn } from '@/lib/utils'
 
 interface ProductListProps {
@@ -168,17 +167,17 @@ export function ProductList({
 
                                 {showSearch && (
                                     <InputGroup className="">
-                                        <InputLeftSlot>
+                                        <InputGroupAddon align="inline-start">
                                             <Search className="h-4 w-4 text-muted-foreground" />
-                                        </InputLeftSlot>
-                                        <Input
+                                        </InputGroupAddon>
+                                        <InputGroupInput
                                             value={searchTerm}
                                             onChange={(e) => setSearchTerm(e.target.value)}
                                             placeholder="Search products..."
                                             className="pl-10 pr-10"
                                         />
                                         {searchTerm && (
-                                            <InputRightSlot>
+                                            <InputGroupAddon align="inline-end">
                                                 <Button
                                                     variant="ghost"
                                                     size="sm"
@@ -187,7 +186,7 @@ export function ProductList({
                                                 >
                                                     <X className="h-4 w-4" />
                                                 </Button>
-                                            </InputRightSlot>
+                                            </InputGroupAddon>
                                         )}
                                     </InputGroup>
                                 )}

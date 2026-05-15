@@ -18,7 +18,7 @@ export function DataTableHeader<TData>({ headerGroups }: DataTableHeaderProps<TD
             {headerGroups.map((headerGroup) => (
                 <TableRow 
                     key={headerGroup.id} 
-                    className="hover:bg-transparent"
+                    className="hover:bg-background"
                 >
                     {headerGroup.headers.map((header) => {
                         const canSort = header.column.getCanSort()

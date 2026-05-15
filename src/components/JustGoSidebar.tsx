@@ -59,9 +59,8 @@ interface JustGoSidebarProps {
 
 export function JustGoSidebar({ open, onOpenChange }: JustGoSidebarProps) {
     return (
-        <Drawer open={open} onOpenChange={onOpenChange} side="left">
+        <Drawer open={open} onOpenChange={onOpenChange} direction="left">
             <DrawerContent
-                direction="left"
                 className="w-[100vw] sm:max-w-[600px] p-0 flex flex-col h-full bg-card rounded-none border-r-0"
             >
                 {/* Top Header */}
@@ -81,7 +80,7 @@ export function JustGoSidebar({ open, onOpenChange }: JustGoSidebarProps) {
                         {leftRailIcons.map((item, i) => (
                             <button
                                 key={i}
-                                className="p-2 rounded-lg text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                                className="p-2 rounded-md text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                                 title={item.label}
                             >
                                 <item.icon className="h-6 w-6" />

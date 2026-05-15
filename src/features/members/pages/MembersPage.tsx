@@ -10,8 +10,7 @@ import { DataTable } from "@/components/ui/DataTable/DataTable"
 import { DataTableToolbar, DataTableToolbarSection } from "@/components/ui/DataTable/DataTableToolbar"
 import { fetchMembers } from "@/features/members/api/membersApi"
 import { type Member } from "@/data/mockMembers"
-import { InputGroup, InputLeftSlot, InputRightSlot } from "@/components/ui/InputGroup"
-import { Input } from "@/components/ui/Input"
+import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/InputGroup"
 import { cn } from "@/lib/utils"
 import {
     Drawer,
@@ -56,9 +55,9 @@ export function MembersPage() {
             header: ({ table }) => (
                 <Checkbox
                     checked={table.getIsAllRowsSelected()}
-                    ref={(el) => {
-                        if (el) el.indeterminate = table.getIsSomeRowsSelected()
-                    }}
+                    // ref={(el) => {
+                    //     if (el) el.inter = table.getIsSomeRowsSelected()
+                    // }}
                     onCheckedChange={(value) => table.toggleAllRowsSelected(!!value)}
                     aria-label="Select all rows"
                 />
@@ -349,10 +348,10 @@ export function MembersPage() {
                             <SlidersHorizontal className="h-4 w-4" />
                         </Button>
                         <InputGroup>
-                            <InputLeftSlot className="pointer-events-none">
+                            <InputGroupAddon align="inline-start" className="pointer-events-none">
                                 <Search className="h-4 w-4 text-muted-foreground" />
-                            </InputLeftSlot>
-                            <Input
+                            </InputGroupAddon>
+                            <InputGroupInput
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 placeholder="Search"
@@ -360,7 +359,7 @@ export function MembersPage() {
                                 className="pl-10 pr-10 bg-transparent"
                             />
                             {searchTerm && (
-                                <InputRightSlot>
+                                <InputGroupAddon align="inline-end">
                                     <Button
                                         variant="ghost"
                                         size="sm"
@@ -369,7 +368,7 @@ export function MembersPage() {
                                     >
                                         <X className="h-4 w-4" />
                                     </Button>
-                                </InputRightSlot>
+                                </InputGroupAddon>
                             )}
                         </InputGroup>
                     </DataTableToolbarSection>

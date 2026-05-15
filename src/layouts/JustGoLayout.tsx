@@ -1,6 +1,6 @@
 import { Outlet } from "react-router"
 import { Menu, Bell, ShoppingCart, ChevronDown } from "lucide-react"
-import { InputGroup, InputRightSlot } from "@/components/ui/InputGroup"
+import { InputGroup, InputGroupAddon } from "@/components/ui/InputGroup"
 import { Input } from "@/components/ui/Input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar"
 import { Button } from "@/components/ui/Button"
@@ -38,9 +38,9 @@ export function JustGoLayout() {
                             placeholder="Search or jump to..."
                             className="bg-background rounded-md h-10 pr-8"
                         />
-                        <InputRightSlot className="right-2">
+                        <InputGroupAddon align="inline-end" className="right-2">
                             <span className="text-xs border border-border rounded px-1.5 py-0.5 text-muted-foreground bg-muted">/</span>
-                        </InputRightSlot>
+                        </InputGroupAddon>
                     </InputGroup>
                 </div>
 
